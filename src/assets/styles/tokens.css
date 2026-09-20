@@ -1,0 +1,33 @@
+/* Le thème : une nuit bleue, la lumière chaude d'une fenêtre allumée. */
+:root {
+  /* nuit */
+  --nuit-haut: #0a0f1e;
+  --nuit-bas: #141c33;
+  --ville-loin: #1a2340;
+  --ville-proche: #0c1225;
+  --beton: #232d4a;
+  --beton-clair: #2e3a5c;
+
+  /* lumière */
+  --lampe: #ffc46b;
+  --lampe-vive: #ffd9a0;
+  --lueur: rgba(255, 196, 107, 0.35);
+  --neon: #6fd3ff;
+
+  /* interface */
+  --fond: #0d1322;
+  --panneau: #131a2c;
+  --panneau-2: #182135;
+  --trait: #263149;
+  --texte: #e8ecf5;
+  --texte-doux: #a9b4ca;
+  --texte-faible: #6f7b95;
+
+  --titre: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --corps: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --rayon: 10px;
+  --gouttiere: 18px;
+  --largeur-max: 1080px;
+}

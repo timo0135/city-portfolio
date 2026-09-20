@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--corps);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--titre);
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+a {
+  color: var(--lampe);
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+/* lien d'évitement : premier au clavier, invisible sinon */
+.saut {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--panneau);
+  color: var(--texte);
+  padding: 10px 16px;
+  border: 1px solid var(--trait);
+  border-radius: var(--rayon);
+}
+.saut:focus {
+  left: 12px;
+  top: 12px;
+}
