@@ -78,6 +78,13 @@ Tout se règle dans **`src/data/scene.js`** :
 - `hauteurPiste` : la longueur de la piste de scroll — plus elle est grande,
   plus le zoom est lent.
 
+**Il n'y a qu'un seul écran dans tout le zoom** : celui posé sur le bureau de
+la chambre. Le dernier plan ne redessine pas de moniteur, il se contente
+d'afficher le contenu **sur la dalle** de celui-là, à la taille exacte qu'elle
+occupe au moment où les deux se croisent. La chambre, elle, continue de
+grossir jusqu'au bout : le bureau et la lampe s'écartent pendant qu'on entre
+dans l'écran.
+
 **La règle à respecter en redessinant un décor** : ce qu'on verra ensuite doit
 être **au centre exact** du SVG (800, 450 dans un `viewBox` de 1600 × 900). Les
 décors sont recadrés selon la forme de l'écran, et seul le centre reste au même
@@ -108,7 +115,7 @@ est au centre de la chambre.
     │   ├── ImmeubleScene.vue  plan 2 — la façade et sa fenêtre allumée
     │   ├── FenetreScene.vue   plan 3 — la fenêtre de près
     │   ├── ChambreScene.vue   plan 4 — lit, étagère, bureau
-    │   └── EcranScene.vue     plan 5 — l'écran (en HTML, pour le raccord)
+    │   └── EcranScene.vue     plan 5 — le contenu posé sur la dalle de l'écran
     ├── components/
     │   └── ContenuEcran.vue   le portfolio affiché sur l'écran
     ├── utils/alea.js          tirage déterministe : la ville est toujours la même

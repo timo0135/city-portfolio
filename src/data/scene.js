@@ -19,8 +19,12 @@ export const scenes = [
   { nom: 'ville', debut: 0, fin: 0.3, facteur: 7, cible: [50, 50] },
   { nom: 'immeuble', debut: 0.22, fin: 0.52, facteur: 7, cible: [50, 50] },
   { nom: 'fenetre', debut: 0.44, fin: 0.72, facteur: 6.5, cible: [50, 50] },
-  { nom: 'chambre', debut: 0.64, fin: 0.93, facteur: 5.5, cible: [50, 50] },
-  { nom: 'ecran', debut: 0.86, fin: 1, facteur: 1.5, cible: [50, 50] }
+  // la chambre ne s'arrête pas en route : elle continue de grossir jusqu'au
+  // bout, pour qu'on voie le bureau et la lampe s'écarter autour de l'écran
+  { nom: 'chambre', debut: 0.64, fin: 1, facteur: 7, cible: [50, 50] },
+  // le dernier plan n'est pas un deuxième écran : c'est le CONTENU affiché
+  // sur la dalle de l'écran de la chambre, calé exactement dessus
+  { nom: 'ecran', debut: 0.86, fin: 1, facteur: 2.14, cible: [50, 50] }
 ]
 
 /** Hauteur de la piste de scroll : plus c'est grand, plus le zoom est lent. */
