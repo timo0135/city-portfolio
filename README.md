@@ -78,8 +78,15 @@ Tout se règle dans **`src/data/scene.js`** :
 - `hauteurPiste` : la longueur de la piste de scroll — plus elle est grande,
   plus le zoom est lent.
 
-**Il n'y a qu'un seul écran dans tout le zoom** : celui posé sur le bureau de
-la chambre. Le dernier plan ne redessine pas de moniteur, il se contente
+**Il n'y a qu'un seul écran dans tout le zoom**, et même une seule chambre :
+elle est dessinée une fois pour toutes dans `ChambreDecor.vue`, puis affichée
+deux fois — en petit derrière la vitre du plan « fenêtre », en grand au plan
+« chambre ». L'échelle de la miniature n'est pas choisie à l'œil : elle est
+**calculée** depuis les réglages des deux plans pour qu'au moment du fondu,
+les deux images se superposent exactement. Changer `facteur` ou `debut` d'un
+de ces deux plans ne casse donc rien.
+
+L'écran, lui, est celui posé sur le bureau de cette chambre. Le dernier plan ne redessine pas de moniteur, il se contente
 d'afficher le contenu **sur la dalle** de celui-là, à la taille exacte qu'elle
 occupe au moment où les deux se croisent. La chambre, elle, continue de
 grossir jusqu'au bout : le bureau et la lampe s'écartent pendant qu'on entre
@@ -114,7 +121,8 @@ est au centre de la chambre.
     │   ├── VilleScene.vue     plan 1 — la ville, la lune, les tours
     │   ├── ImmeubleScene.vue  plan 2 — la façade et sa fenêtre allumée
     │   ├── FenetreScene.vue   plan 3 — la fenêtre de près
-    │   ├── ChambreScene.vue   plan 4 — lit, étagère, bureau
+    │   ├── ChambreScene.vue   plan 4 — la chambre, en grand
+    │   ├── ChambreDecor.vue   la chambre elle-même, partagée avec le plan 3
     │   └── EcranScene.vue     plan 5 — le contenu posé sur la dalle de l'écran
     ├── components/
     │   └── ContenuEcran.vue   le portfolio affiché sur l'écran
